@@ -5,6 +5,7 @@ jobs:
       - image: circleci/php:7.1-node-browsers
     steps:
       - checkout
+      - setup_remote_docker
       - run: sudo docker-compose build
       - run: sudo docker-compose up -d
       - run: sudo docker-compose exec php ./vendor/bin/phpcs src --standard=PSR2
