@@ -9,6 +9,8 @@ services:
       target: dev_php_base
     environment:
       - HTTP_HOST=http://nginx/
+    volumes:
+      - ./src:/var/www/html/src
 
   nginx:
     image: nginx:1.15.7-alpine
