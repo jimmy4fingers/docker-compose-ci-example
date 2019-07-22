@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev_php_base
+    environment:
+      - HTTP_HOST=http://nginx/
+
+  nginx:
+    image: nginx:1.15.7-alpine
+    volumes:
+      - ./compose.conf:/etc/nginx/conf.d/default.conf
+      - ./server.crt:/server.crt
+      - ./server.key:/server.key
+    ports:
+      - 80:80

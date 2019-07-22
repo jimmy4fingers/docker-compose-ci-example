@@ -1,0 +1,24 @@
+{
+    "name": "jimmy4fingers/docker-compose-ci-example",
+    "require": {
+        "slim/slim": "^3.12",
+        "monolog/monolog": "^1.24"
+    },
+    "require-dev": {
+        "codeception/codeception": "^3.0",
+        "codeception/c3": "^2.4",
+        "squizlabs/php_codesniffer": "^3.4",
+        "phpstan/phpstan": "^0.11.12"
+    },
+    "authors": [
+        {
+            "name": "james lee",
+            "email": "james.lee@missguided.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/app/"
+        }
+    }
+}
