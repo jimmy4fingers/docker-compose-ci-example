@@ -5,10 +5,17 @@ jobs:
       docker_layer_caching: true
     steps:
       - checkout
+
       - run:
           name: Build Docker images
           command: |
             docker-compose build --no-cache
+
       - run:
           name: Start Docker Compose
           command: docker-compose up -d
+
+      - run:
+          name: Run Code Quality Checks
+          command: |
+            docker-compose exec php ./vendor/bin/phpcs src --standard=PSR2
