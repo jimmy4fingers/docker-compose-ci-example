@@ -6,7 +6,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: dev_php_base
     environment:
       - HTTP_HOST=http://nginx/
     volumes:
