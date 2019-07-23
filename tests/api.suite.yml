@@ -1,0 +1,7 @@
+actor: ApiTester
+modules:
+    enabled:
+        - PhpBrowser:
+              url: 'http://nginx'
+        - REST:
+              depends: PhpBrowser
