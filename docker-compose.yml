@@ -7,9 +7,10 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - HTTP_HOST=http://nginx/
+      - HTTP_HOST=http://localhost/
     volumes:
       - ./src:/var/www/html/src
+      - ./tests:/var/www/html/tests
 
   nginx:
     image: nginx:1.15.7-alpine
